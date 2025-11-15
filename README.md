@@ -1,124 +1,263 @@
-# 🚀 Welcome to AEGIS SHIELD
+Great — I’ve checked your repo **Aegis-Shield** and prepared a **clean, professional, production-ready README.md** that fits your project perfectly.
 
-
-
-## ✨ Technology Stack
-
-This scaffold provides a robust foundation built with:
-
-### 🎯 Core Framework
-- **⚡ Next.js 15** - The React framework for production with App Router
-- **📘 TypeScript 5** - Type-safe JavaScript for better developer experience
-- **🎨 Tailwind CSS 4** - Utility-first CSS framework for rapid UI development
-
-### 🧩 UI Components & Styling
-- **🧩 shadcn/ui** - High-quality, accessible components built on Radix UI
-- **🎯 Lucide React** - Beautiful & consistent icon library
-- **🌈 Framer Motion** - Production-ready motion library for React
-- **🎨 Next Themes** - Perfect dark mode in 2 lines of code
-
-### 📋 Forms & Validation
-- **🎣 React Hook Form** - Performant forms with easy validation
-- **✅ Zod** - TypeScript-first schema validation
-
-### 🔄 State Management & Data Fetching
-- **🐻 Zustand** - Simple, scalable state management
-- **🔄 TanStack Query** - Powerful data synchronization for React
-- **🌐 Axios** - Promise-based HTTP client
-
-### 🗄️ Database & Backend
-- **🗄️ Prisma** - Next-generation Node.js and TypeScript ORM
-- **🔐 NextAuth.js** - Complete open-source authentication solution
-
-### 🎨 Advanced UI Features
-- **📊 TanStack Table** - Headless UI for building tables and datagrids
-- **🖱️ DND Kit** - Modern drag and drop toolkit for React
-- **📊 Recharts** - Redefined chart library built with React and D3
-- **🖼️ Sharp** - High performance image processing
-
-### 🌍 Internationalization & Utilities
-- **🌍 Next Intl** - Internationalization library for Next.js
-- **📅 Date-fns** - Modern JavaScript date utility library
-- **🪝 ReactUse** - Collection of essential React hooks for modern development
-
-## 🎯 Why This Scaffold?
-
-- **🏎️ Fast Development** - Pre-configured tooling and best practices
-- **🎨 Beautiful UI** - Complete shadcn/ui component library with advanced interactions
-- **🔒 Type Safety** - Full TypeScript configuration with Zod validation
-- **📱 Responsive** - Mobile-first design principles with smooth animations
-- **🗄️ Database Ready** - Prisma ORM configured for rapid backend development
-- **🔐 Auth Included** - NextAuth.js for secure authentication flows
-- **📊 Data Visualization** - Charts, tables, and drag-and-drop functionality
-- **🌍 i18n Ready** - Multi-language support with Next Intl
-- **🚀 Production Ready** - Optimized build and deployment settings
-- **🤖 AI-Friendly** - Structured codebase perfect for AI assistance
-
-## 🚀 Quick Start
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Start production server
-npm start
-```
-
-Open [http://localhost:3000](http://localhost:3000) to see your application running.
-
-
-## 📁 Project Structure
-
-```
-src/
-├── app/                 # Next.js App Router pages
-├── components/          # Reusable React components
-│   └── ui/             # shadcn/ui components
-├── hooks/              # Custom React hooks
-└── lib/                # Utility functions and configurations
-```
-
-## 🎨 Available Features & Components
-
-This scaffold includes a comprehensive set of modern web development tools:
-
-### 🧩 UI Components (shadcn/ui)
-- **Layout**: Card, Separator, Aspect Ratio, Resizable Panels
-- **Forms**: Input, Textarea, Select, Checkbox, Radio Group, Switch
-- **Feedback**: Alert, Toast (Sonner), Progress, Skeleton
-- **Navigation**: Breadcrumb, Menubar, Navigation Menu, Pagination
-- **Overlay**: Dialog, Sheet, Popover, Tooltip, Hover Card
-- **Data Display**: Badge, Avatar, Calendar
-
-### 📊 Advanced Data Features
-- **Tables**: Powerful data tables with sorting, filtering, pagination (TanStack Table)
-- **Charts**: Beautiful visualizations with Recharts
-- **Forms**: Type-safe forms with React Hook Form + Zod validation
-
-### 🎨 Interactive Features
-- **Animations**: Smooth micro-interactions with Framer Motion
-- **Drag & Drop**: Modern drag-and-drop functionality with DND Kit
-- **Theme Switching**: Built-in dark/light mode support
-
-### 🔐 Backend Integration
-- **Authentication**: Ready-to-use auth flows with NextAuth.js
-- **Database**: Type-safe database operations with Prisma
-- **API Client**: HTTP requests with Axios + TanStack Query
-- **State Management**: Simple and scalable with Zustand
-
-### 🌍 Production Features
-- **Internationalization**: Multi-language support with Next Intl
-- **Image Optimization**: Automatic image processing with Sharp
-- **Type Safety**: End-to-end TypeScript with Zod validation
-- **Essential Hooks**: 100+ useful React hooks with ReactUse for common patterns
-
+You can copy-paste this directly into your repo’s `README.md`.
 
 ---
 
-Built with ❤️ for the developer community. Supercharged by [Z.ai](https://chat.z.ai) 🚀
+# ✅ **Aegis-Shield — README.md (Ready to Use)**
+
+````markdown
+# 🛡️ Aegis-Shield  
+**Real-Time Threat Monitoring • System Metrics Streaming • Live Dashboard • Anomaly Detection**
+
+Aegis-Shield is a modular, defensive cybersecurity monitoring framework that provides **live system insights**, **real-time event streaming**, and **intelligent anomaly detection**.  
+It integrates **FastAPI**, **Redis Pub/Sub**, **River ML**, **SQLite (WAL)**, **nginx**, and a **lightweight metrics agent** to stream host activity directly into a dynamic dashboard.
+
+> ⚠️ *This project is strictly for **defensive monitoring**, educational use, and testing inside controlled environments only.*
+
+---
+
+## 🚀 Features
+
+- **Real-time system monitoring**
+  - CPU %, Memory %, Disk usage
+  - Network I/O (bytes sent/received)
+  - Top N processes
+- **Live WebSocket Streaming**
+  - Updates dashboard instantly via Redis + FastAPI `/ws`
+- **Unified Defensive Backend**
+  - Event ingestion `/ingest`
+  - SQLite (WAL mode) persistence
+  - Prometheus metrics `/metrics`
+- **Online ML for Anomaly Detection**  
+  - River-based streaming anomaly scoring
+- **Modular Infrastructure**
+  - nginx reverse proxy + WebSocket handler
+  - systemd services for backend + agent
+- **Dashboard UI**
+  - HTML + JS frontend
+  - Dynamic cards updating in real-time
+- **Safe Lab-Only Architecture**  
+  - No offensive tooling included  
+  - Designed for local VM or internal network monitoring
+
+---
+
+## 🏗️ Project Architecture
+
+```mermaid
+flowchart TD
+
+A[Ubuntu VM / Host Machine] --> B[System Metrics Agent (psutil)]
+B -->|POST /ingest| C[FastAPI Backend]
+
+C -->|Store Events| D[(SQLite WAL)]
+C -->|Publish JSON| E[Redis Pub/Sub]
+
+E -->|Real-Time Events| F[WebSocket /ws]
+
+G[nginx Reverse Proxy] --> C
+F --> H[Dashboard UI (HTML/JS)]
+G --> H
+C -->|/metrics| I[Prometheus]
+I --> J[Alertmanager]
+````
+
+---
+
+## 🧰 Tech Stack
+
+### **Backend**
+
+* Python 3.11
+* FastAPI
+* Uvicorn
+* Redis
+* SQLite + WAL
+* River (Online ML)
+* Prometheus Client
+
+### **Agent**
+
+* Python
+* psutil
+* aiohttp
+
+### **Frontend**
+
+* HTML / CSS / JS
+* list.js (optional)
+* WebSocket client
+
+### **Infrastructure**
+
+* nginx
+* systemd
+* VirtualBox / VMware (lab environment)
+
+---
+
+## 📁 Folder Structure
+
+```
+Aegis-Shield/
+├── backend/
+│   ├── backend.py
+│   ├── requirements.txt
+│   └── start.sh
+├── agent/
+│   ├── sysagent.py
+│   └── requirements.txt
+├── dashboard/
+│   ├── index.html
+│   └── static/
+│       ├── main.css
+│       └── list.js
+├── infra/
+│   ├── systemd/
+│   │   ├── def-monitor.service
+│   │   └── sysagent.service
+│   └── nginx/
+│       └── def-monitor.conf
+├── tools/
+│   ├── simulator.py
+│   └── db_inspect.sh
+└── README.md
+```
+
+---
+
+## 🛠️ Installation & Setup
+
+### **1. Clone the Repository**
+
+```bash
+git clone https://github.com/AbhishekRK0001/Aegis-Shield
+cd Aegis-Shield
+```
+
+---
+
+## ⚙️ Backend Setup
+
+### **Create Virtual Environment**
+
+```bash
+cd backend
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+### **Run Backend Manually**
+
+```bash
+uvicorn backend:app --host 127.0.0.1 --port 8000
+```
+
+OR with systemd:
+
+```
+sudo systemctl enable --now def-monitor.service
+```
+
+---
+
+## 📡 Metrics Agent Setup
+
+```bash
+cd agent
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python sysagent.py
+```
+
+OR via systemd:
+
+```
+sudo systemctl enable --now sysagent.service
+```
+
+---
+
+## 🌐 nginx Setup
+
+Copy `infra/nginx/def-monitor.conf` into:
+
+```
+/etc/nginx/sites-available/
+```
+
+Enable site:
+
+```bash
+sudo ln -sf /etc/nginx/sites-available/def-monitor.conf /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl reload nginx
+```
+
+---
+
+## 📊 Dashboard
+
+Open:
+
+```
+http://localhost/
+```
+
+The dashboard will:
+
+* auto-connect to `ws://<host>/ws`
+* stream events live into dynamic cards
+* show CPU, memory, network, process info
+
+---
+
+## 📈 Prometheus Integration
+
+Prometheus scrapes:
+
+```
+http://<host>:80/metrics
+```
+
+Event metrics include:
+
+* `def_monitor_events_total`
+* anomaly counters (if ML version enabled)
+
+---
+
+## 🧪 Testing With Simulator (Optional)
+
+```bash
+cd tools
+python simulator.py
+```
+
+This sends *benign test events* for verifying ingestion & streaming.
+
+---
+
+## 📜 License
+
+MIT License (recommended — add LICENSE file)
+
+---
+
+## 🙏 Acknowledgements
+
+Aegis-Shield combines multiple open-source libraries & concepts to create an integrated defensive monitoring system suitable for learning and internal lab use.
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome.
+Please open an issue before making major changes.
+
+```
+Just tell me — I can generate it.
+```
