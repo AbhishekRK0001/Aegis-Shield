@@ -4,7 +4,7 @@ You can copy-paste this directly into your repo’s `README.md`.
 
 ---
 
-# ✅ **Aegis-Shield — README.md (Ready to Use)**
+# ✅ **Aegis-Shield — README.md**
 
 ````markdown
 # 🛡️ Aegis-Shield  
